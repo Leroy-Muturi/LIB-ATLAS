@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    { "src": "/api/scan",     "dest": "/api/scan.js" },
+    { "src": "/api/document", "dest": "/api/document.js" },
+    { "src": "/(.*)",         "dest": "/index.html" }
+  ]
+}
